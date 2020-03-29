@@ -9,6 +9,7 @@ def script_data():
     character = None
     place = None
     speaking_turn = ""
+    off_screen = False
 
     with open(script_path) as script:
         for line in script:
@@ -25,6 +26,7 @@ def script_data():
                 # (O.S.) means the character speaks offscreen,
                 # remove marking to not interpret it as new character
                 if " (O.S.)" in line:
+                    off_screen = True
                     line = line.replace(" (O.S.)", "")
                 
                 if line in characters:
@@ -37,10 +39,12 @@ def script_data():
                 
                 # Add line to a character
                 if character is not None:
-                    data_rows.append({"Character": character, "Place": place, "Line": speaking_turn})
+                    word_count = len(speaking_turn.split())
+                    data_rows.append({"Character": character, "Off screen": off_screen, "Place": place, "Line": speaking_turn, "Word count": word_count})
                 
                 character = None
                 speaking_turn = ""
+                off_screen = False
                 continue
 
             # If we got this far, a speaking turn is not over.
@@ -55,4 +59,5 @@ print(script_data().to_string())
 #TODO: some characters are in fact the same character, at least young woman, Wolanda and honey bunny, as well as pumpkin and young man. Also Winston is The Wolf
 #TODO: there's a line by both LANCE AND VINCENT
 #TODO: Remove words in brackets?
+#TODO: Offscreen
 
