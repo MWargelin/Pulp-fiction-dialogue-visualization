@@ -1,8 +1,15 @@
 import pandas as pd
+import re
 from places import places
 from characters import characters
 
 script_path = "pulp_fiction_script.txt"
+
+def remove_parenthesis(speaking_turn):
+    speaking_turn = re.sub(r'\([\w\W]*\)', '', speaking_turn)
+    speaking_turn = re.sub(r'\s\s', ' ', speaking_turn)
+    return speaking_turn.strip()
+
 
 def script_data():
     data_rows = []
@@ -39,6 +46,7 @@ def script_data():
                 
                 # Add line to a character
                 if character is not None:
+                    speaking_turn = remove_parenthesis(speaking_turn)
                     word_count = len(speaking_turn.split())
                     data_rows.append({"Character": character, "Off screen": off_screen, "Place": place, "Line": speaking_turn, "Word count": word_count})
                 
@@ -58,6 +66,3 @@ print(script_data().to_string())
 
 #TODO: some characters are in fact the same character, at least young woman, Wolanda and honey bunny, as well as pumpkin and young man. Also Winston is The Wolf
 #TODO: there's a line by both LANCE AND VINCENT
-#TODO: Remove words in brackets?
-#TODO: Offscreen
-
