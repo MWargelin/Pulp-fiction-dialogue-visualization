@@ -5,6 +5,13 @@ from characters import characters
 
 script_path = "pulp_fiction_script.txt"
 
+def special_cases(data):
+    # There's a scene where picture cuts back and forth, and the location isn't specified in the script so it goes unnoticed by the algorithm.
+    # Manually change the locations to the right locations
+    data.loc[(data['Place'] == "VINCENT IN THE MALIBU") & (data['Character'] == "VINCENT"), 'Place'] = "INT. VINCENT'S MALIBU (MOVING) – NIGHT"
+    data.loc[(data['Place'] == "VINCENT IN THE MALIBU") & ((data['Character'] == "LANCE") | (data['Character'] == "JODY")), 'Place'] = "INT. LANCE'S HOUSE – NIGHT"
+
+
 def remove_parenthesis(speaking_turn):
     speaking_turn = re.sub(r'\([\w\W]*\)', '', speaking_turn)
     speaking_turn = re.sub(r'\s\s', ' ', speaking_turn)
@@ -58,8 +65,11 @@ def script_data():
             # If we got this far, a speaking turn is not over.
             # Concatenate this line to the ongoing speaking turn
             speaking_turn = " ".join([speaking_turn, line])
-        
-    return pd.DataFrame(data_rows)
+    
+    data = pd.DataFrame(data_rows)
+    special_cases(data)
+
+    return data
 
 
 print(script_data().to_string())
