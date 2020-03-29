@@ -13,7 +13,7 @@ def special_cases(data):
 
 
 def remove_parenthesis(speaking_turn):
-    speaking_turn = re.sub(r'\([\w\W]*\)', '', speaking_turn)
+    speaking_turn = re.sub(r'\((.*?)\)', '', speaking_turn)
     speaking_turn = re.sub(r'\s\s', ' ', speaking_turn)
     return speaking_turn.strip()
 
@@ -71,8 +71,9 @@ def script_data():
 
     return data
 
+data = script_data()
+print(data.to_string())
 
-print(script_data().to_string())
 
 #TODO: some characters are in fact the same character, at least young woman, Wolanda and honey bunny, as well as pumpkin and young man. Also Winston is The Wolf
 #TODO: there's a line by both LANCE AND VINCENT
