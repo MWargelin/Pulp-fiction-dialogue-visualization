@@ -92,7 +92,7 @@ def script_data():
     return data
 
 data = script_data()
-print(data.to_string())
+print(data.to_csv())
 
 
 #TODO: some characters are in fact the same character, at least young woman, Wolanda and honey bunny, as well as pumpkin and young man.
