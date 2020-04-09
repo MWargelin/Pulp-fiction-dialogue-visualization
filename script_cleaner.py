@@ -86,6 +86,9 @@ def script_data():
     special_cases(data)
     string_conversions(data)
 
+    data["Line number"] = pd.Series([ x for x in range(1, len(data)+1) ])
+    data = data.set_index("Line number", drop=True)
+
     return data
 
 data = script_data()
