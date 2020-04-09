@@ -5,6 +5,11 @@ from characters import characters
 
 script_path = "pulp_fiction_script.txt"
 
+def string_conversions(data):
+    data.Character = data.Character.str.title()
+    data.Place = data.Place.str.title()
+    data.Time = data.Time.str.lower()
+
 def special_cases(data):
     # There's a scene where picture cuts back and forth, and the location isn't specified in the script so it goes unnoticed by the algorithm.
     # Manually change the locations to the right locations
@@ -79,6 +84,7 @@ def script_data():
     
     data = pd.DataFrame(data_rows)
     special_cases(data)
+    string_conversions(data)
 
     return data
 
