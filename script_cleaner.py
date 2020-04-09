@@ -93,9 +93,3 @@ def script_data():
 
 data = script_data()
 print(data.to_csv())
-
-
-#TODO: some characters are in fact the same character, at least young woman, Wolanda and honey bunny, as well as pumpkin and young man.
-# Also Winston is The Wolf
-# Also WOMAN'S VOICE is MOTHER
-#TODO: there's a line by both LANCE AND VINCENT
