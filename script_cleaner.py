@@ -7,7 +7,35 @@ script_path = "pulp_fiction_script.txt"
 
 def string_conversions(data):
     data.Character = data.Character.str.title()
-    data.Place = data.Place.str.title()
+
+    # Manually change cases that don't work with str.title()
+    data.Character = data.Character.str.replace("Woman\'S Voice", "Woman\'s voice")
+    data.Character = data.Character.str.replace("Young Man", "Young man")
+    data.Character = data.Character.str.replace("Young Woman", "Young woman")
+    data.Character = data.Character.str.replace("Fourth Man", "Fourth man")
+    data.Character = data.Character.str.replace("Looky-Loo Woman", "Looky-loo woman")
+
+    data.Place = data.Place.str.lower()
+
+    # Manually change cases that don't work with str.lower()
+    data.Place = data.Place.str.replace("chevy", "Chevy")
+    data.Place = data.Place.str.replace("sally leroy\'s", "Sally LeRoy\'s")
+    data.Place = data.Place.str.replace("lance\'s", "Lance\'s")
+    data.Place = data.Place.str.replace("marcellus", "Marsellus")
+    data.Place = data.Place.str.replace("marsellus", "Marsellus")
+    data.Place = data.Place.str.replace("wallace", "Wallace")
+    data.Place = data.Place.str.replace("jackrabbit slim", "Jackrabbit Slim")
+    data.Place = data.Place.str.replace("parked/raining", "parked / raining")
+    data.Place = data.Place.str.replace("willis locker", "Willis locker")
+    data.Place = data.Place.str.replace("honda", "Honda")
+    data.Place = data.Place.str.replace("butch", "Butch")
+    data.Place = data.Place.str.replace("mason-dixie pawnshop", "Mason-Dixie pawnshop")
+    data.Place = data.Place.str.replace("russell", "Russell")
+    data.Place = data.Place.str.replace("nova", "Nova")
+    data.Place = data.Place.str.replace("jimmie", "Jimmie")
+    data.Place = data.Place.str.replace("monster joe\'s truck and tow", "Monster Joe\'s Truck and Tow")
+    data.Place = data.Place.str.replace("vincent", "Vincent")
+    
     data.Time = data.Time.str.lower()
 
 def special_cases(data):
