@@ -38,6 +38,7 @@ def string_conversions(data):
     
     data.Time = data.Time.str.lower()
 
+
 def special_cases(data):
     # There's a scene where picture cuts back and forth, and the location isn't specified in the script so it goes unnoticed by the algorithm.
     # Manually change the locations to the right locations
@@ -50,6 +51,7 @@ def remove_parenthesis(speaking_turn):
     speaking_turn = re.sub(r'\s\s', ' ', speaking_turn)
     return speaking_turn.strip()
 
+
 def place_and_time(line):
     splits = line.rsplit("–", maxsplit=1)
     place = splits[0].strip()
@@ -59,6 +61,16 @@ def place_and_time(line):
         time = None
 
     return (place, time)
+
+
+def count_words(speaking_turn):
+    splits = speaking_turn.split()
+    count = len(splits)
+    for word in splits:
+        if word == "–" or word == '-':
+            count = count - 1
+
+    return count
 
 
 def script_data():
@@ -98,7 +110,7 @@ def script_data():
                 # Add line to a character
                 if character is not None:
                     speaking_turn = remove_parenthesis(speaking_turn)
-                    word_count = len(speaking_turn.split())
+                    word_count = count_words(speaking_turn)
                     data_rows.append({"Character": character, "Off screen": off_screen, "Place": place, "Time": time, "Line": speaking_turn, "Word count": word_count})
                 
                 character = None
@@ -122,6 +134,7 @@ def script_data():
     data = data.fillna(method='ffill')
 
     return data
+    
 
 data = script_data()
 print(data.to_csv())
