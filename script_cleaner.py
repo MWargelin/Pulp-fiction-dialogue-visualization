@@ -89,6 +89,10 @@ def script_data():
     data["Line number"] = pd.Series([ x for x in range(1, len(data)+1) ])
     data = data.set_index("Line number", drop=True)
 
+    # Some places don't get recorded: forward filling NaN values sets the location to be previous location if not specified in the script
+    # This is valid place for all cases
+    data = data.fillna(method='ffill')
+
     return data
 
 data = script_data()

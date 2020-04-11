@@ -428,13 +428,13 @@ Line number,Character,Off screen,Place,Time,Line,Word count
 427,Mia,False,Int. Marsellus Wallace'S Home,night,"That was a little bit more information than I needed to know, but go right ahead.",16
 428,Mia,False,Int. Marsellus Wallace'S Home,night,"Disco! Vince, you little cola nut, you've been holding out on me.",12
 429,Vincent,False,Int. Bathroom (Marsellus Wallace'S House),night,"One drink and leave. Don't be rude, but drink your drink quickly, say goodbye, walk out the door, get in your car, and go down the road.",27
-430,Vincent,False,Bathroom,,"...It's a moral test of yourself, whether or not you can maintain loyalty. Because when people are loyal to each other, that's very meaningful.",24
-431,Vincent,False,Bathroom,,"So you're gonna go out there, drink your drink, say ""Goodnight, I've had a very lovely evening,"" go home, and jack off. And that's all you're gonna do.",28
-432,Vincent,False,Living Room,,Jesus Christ!,2
-433,Vincent,False,Living Room,,Mia! MIA! What the hell happened?,6
-434,Vincent,False,Living Room,,"I'll be a son-of-a-bitch. Mia! MIA! What did you take? Answer me honey, what did you take?",17
-435,Vincent,False,Living Room,,"Okay honey, we're getting you on your feet.",8
-436,Vincent,False,Living Room,,"We're on our feet now, and now we're gonna talk out to the car. Here we go, watch us walk.",20
+430,Vincent,False,Bathroom,night,"...It's a moral test of yourself, whether or not you can maintain loyalty. Because when people are loyal to each other, that's very meaningful.",24
+431,Vincent,False,Bathroom,night,"So you're gonna go out there, drink your drink, say ""Goodnight, I've had a very lovely evening,"" go home, and jack off. And that's all you're gonna do.",28
+432,Vincent,False,Living Room,night,Jesus Christ!,2
+433,Vincent,False,Living Room,night,Mia! MIA! What the hell happened?,6
+434,Vincent,False,Living Room,night,"I'll be a son-of-a-bitch. Mia! MIA! What did you take? Answer me honey, what did you take?",17
+435,Vincent,False,Living Room,night,"Okay honey, we're getting you on your feet.",8
+436,Vincent,False,Living Room,night,"We're on our feet now, and now we're gonna talk out to the car. Here we go, watch us walk.",20
 437,Preacher (Emil Simkus),False,Int. Lance'S House,night,"Hold hands, you love birds.",5
 438,Jody,True,Int. Lance'S House,night,Lance! The phone's ringing!,4
 439,Lance,False,Int. Lance'S House,night,I can hear it!,4
@@ -479,51 +479,51 @@ Line number,Character,Off screen,Place,Time,Line,Word count
 478,Lance,False,Int. Lance'S House,night,"I am, if you'll let me.",6
 479,Vincent,False,Int. Lance'S House,night,I'm not fuckin' stoppin' you.,5
 480,Lance,False,Int. Lance'S House,night,"Stop talkin' to me, and start talkin' to her.",9
-481,Vincent,True,Int. Spare Room,,Hurry up man! We're losin' her!,6
-482,Lance,False,Int. Spare Room,,I'm looking as fast as I can!,7
-483,Jody,True,Int. Spare Room,,What's he lookin' for?,4
-484,Vincent,True,Int. Spare Room,,"I dunno, some medical book.",5
-485,Jody,True,Int. Spare Room,,What are you lookin' for?,5
-486,Lance,False,Int. Spare Room,,My black medical book!,4
-487,Jody,False,Int. Spare Room,,Whata're you looking for?,4
-488,Lance,False,Int. Spare Room,,My black fuckin' medical book. It's like a text book they give to nurses.,14
-489,Jody,False,Int. Spare Room,,I never saw a medical book.,6
-490,Lance,False,Int. Spare Room,,"Trust me, I have one.",5
-491,Jody,False,Int. Spare Room,,"Well if it's that important, why didn't you keep it with the shot?",13
-492,Lance,False,Int. Spare Room,,I don't know! Stop bothering me!,6
-493,Jody,False,Int. Spare Room,,"While you're lookin' for it, that girl's gonna die on our carpet. You're never gonna find it in all this shit. For six months now, I've been telling you to clean this room –",34
-494,Vincent,True,Int. Spare Room,,"– get your ass in here, fuck the book!",9
-495,Vincent,False,Living Room,,Quit fuckin' around man and give her the shot!,9
-496,Lance,False,Living Room,,"While I'm doing this, take her shirt off and find her heart.",12
-497,Vincent,False,Living Room,,Does it have to be exact?,6
-498,Lance,False,Living Room,,"Yeah, it has to be exact! I'm giving her an injection in the heart, so I gotta exactly hit her in the heart.",23
-499,Vincent,False,Living Room,,"Well, I don't know exactly where her heart is, I think it's here.",13
-500,Lance,False,Living Room,,That's it.,2
-501,Vincent,False,Living Room,,"I need a big fat magic marker, got one?",9
-502,Jody,False,Living Room,,What?,1
-503,Vincent,False,Living Room,,"I need a big fat magic marker, any felt pen'll do, but a magic marker would be great.",18
-504,Jody,False,Living Room,,Hold on.,2
-505,Lance,False,Living Room,,"It's ready, I'll tell you what to do.",8
-506,Vincent,False,Living Room,,You're gonna give her the shot.,6
-507,Lance,False,Living Room,,"No, you're gonna give her the shot.",7
-508,Vincent,False,Living Room,,I've never does this before.,5
-509,Lance,False,Living Room,,"I've never done this before either, and I ain't starting now. You brought 'er here, that means you give her the shot. The day I bring an ODing bitch to your place, then I gotta give her the shot.",39
-510,Jody,False,Living Room,,Got it.,2
-511,Vincent,False,Living Room,,"Okay, what do I do?",5
-512,Lance,False,Living Room,,"Well, you're giving her an injection of adrenaline straight to her heart. But she's got a breast plate in front of her heart, so you gotta pierce through that. So what you gotta do is bring the needle down in a stabbing motion.",43
-513,Vincent,False,Living Room,,I gotta stab her?,4
-514,Lance,False,Living Room,,"If you want the needle to pierce through to her heart, you gotta stab her hard. Then once you do, push down on the plunger.",25
-515,Vincent,False,Living Room,,What happens after that?,4
-516,Lance,False,Living Room,,I'm curious about that myself.,5
-517,Vincent,False,Living Room,,This ain't a fuckin' joke man!,6
-518,Lance,False,Living Room,,She's supposed to come out of it like – – that.,11
-519,Vincent,False,Living Room,,Count to three.,3
-520,Lance,False,Living Room,,One...,1
-521,Lance,True,Living Room,,...two...,1
-522,Lance,True,Living Room,,...three!,1
-523,Lance,False,Living Room,,"If you're okay, say something.",5
-524,Mia,False,Living Room,,Something.,1
-525,Jody,False,Living Room,,Anybody want a beer?,4
+481,Vincent,True,Int. Spare Room,night,Hurry up man! We're losin' her!,6
+482,Lance,False,Int. Spare Room,night,I'm looking as fast as I can!,7
+483,Jody,True,Int. Spare Room,night,What's he lookin' for?,4
+484,Vincent,True,Int. Spare Room,night,"I dunno, some medical book.",5
+485,Jody,True,Int. Spare Room,night,What are you lookin' for?,5
+486,Lance,False,Int. Spare Room,night,My black medical book!,4
+487,Jody,False,Int. Spare Room,night,Whata're you looking for?,4
+488,Lance,False,Int. Spare Room,night,My black fuckin' medical book. It's like a text book they give to nurses.,14
+489,Jody,False,Int. Spare Room,night,I never saw a medical book.,6
+490,Lance,False,Int. Spare Room,night,"Trust me, I have one.",5
+491,Jody,False,Int. Spare Room,night,"Well if it's that important, why didn't you keep it with the shot?",13
+492,Lance,False,Int. Spare Room,night,I don't know! Stop bothering me!,6
+493,Jody,False,Int. Spare Room,night,"While you're lookin' for it, that girl's gonna die on our carpet. You're never gonna find it in all this shit. For six months now, I've been telling you to clean this room –",34
+494,Vincent,True,Int. Spare Room,night,"– get your ass in here, fuck the book!",9
+495,Vincent,False,Living Room,night,Quit fuckin' around man and give her the shot!,9
+496,Lance,False,Living Room,night,"While I'm doing this, take her shirt off and find her heart.",12
+497,Vincent,False,Living Room,night,Does it have to be exact?,6
+498,Lance,False,Living Room,night,"Yeah, it has to be exact! I'm giving her an injection in the heart, so I gotta exactly hit her in the heart.",23
+499,Vincent,False,Living Room,night,"Well, I don't know exactly where her heart is, I think it's here.",13
+500,Lance,False,Living Room,night,That's it.,2
+501,Vincent,False,Living Room,night,"I need a big fat magic marker, got one?",9
+502,Jody,False,Living Room,night,What?,1
+503,Vincent,False,Living Room,night,"I need a big fat magic marker, any felt pen'll do, but a magic marker would be great.",18
+504,Jody,False,Living Room,night,Hold on.,2
+505,Lance,False,Living Room,night,"It's ready, I'll tell you what to do.",8
+506,Vincent,False,Living Room,night,You're gonna give her the shot.,6
+507,Lance,False,Living Room,night,"No, you're gonna give her the shot.",7
+508,Vincent,False,Living Room,night,I've never does this before.,5
+509,Lance,False,Living Room,night,"I've never done this before either, and I ain't starting now. You brought 'er here, that means you give her the shot. The day I bring an ODing bitch to your place, then I gotta give her the shot.",39
+510,Jody,False,Living Room,night,Got it.,2
+511,Vincent,False,Living Room,night,"Okay, what do I do?",5
+512,Lance,False,Living Room,night,"Well, you're giving her an injection of adrenaline straight to her heart. But she's got a breast plate in front of her heart, so you gotta pierce through that. So what you gotta do is bring the needle down in a stabbing motion.",43
+513,Vincent,False,Living Room,night,I gotta stab her?,4
+514,Lance,False,Living Room,night,"If you want the needle to pierce through to her heart, you gotta stab her hard. Then once you do, push down on the plunger.",25
+515,Vincent,False,Living Room,night,What happens after that?,4
+516,Lance,False,Living Room,night,I'm curious about that myself.,5
+517,Vincent,False,Living Room,night,This ain't a fuckin' joke man!,6
+518,Lance,False,Living Room,night,She's supposed to come out of it like – – that.,11
+519,Vincent,False,Living Room,night,Count to three.,3
+520,Lance,False,Living Room,night,One...,1
+521,Lance,True,Living Room,night,...two...,1
+522,Lance,True,Living Room,night,...three!,1
+523,Lance,False,Living Room,night,"If you're okay, say something.",5
+524,Mia,False,Living Room,night,Something.,1
+525,Jody,False,Living Room,night,Anybody want a beer?,4
 526,Vincent,True,Ext. Front Of Marsellus Wallace'S House,night,Mia!,1
 527,Vincent,False,Ext. Front Of Marsellus Wallace'S House,night,What are your thoughts on how to handle this?,9
 528,Mia,False,Ext. Front Of Marsellus Wallace'S House,night,What's yours?,2
@@ -657,35 +657,35 @@ Line number,Character,Off screen,Place,Time,Line,Word count
 656,Butch,False,Int. Motel (Room Six),night,Will you kiss it?,4
 657,Fabienne,False,Int. Motel (Room Six),night,But you first.,3
 658,Fabienne,False,Int. Motel (Room Six),night,"Butch my love, the adventure begins.",6
-659,Butch,False,Motel Room,,I think I cracked a rib.,6
-660,Fabienne,False,Motel Room,,Giving me oral pleasure?,4
-661,Butch,False,Motel Room,,"No retard, from the fight.",5
-662,Fabienne,False,Motel Room,,Don't call me retard.,4
-663,Butch,False,Motel Room,,My name is Fabby! My name is Fabby!,8
-664,Fabienne,False,Motel Room,,Shut up fuck head! I hate that Mongoloid voice.,9
-665,Butch,False,Motel Room,,"Okay, sorry, sorry, sorry, I take it back! Can I have a towel please, Miss Beautiful Tulip.",17
-666,Fabienne,False,Motel Room,,"Oh I like that, I like being called a tulip. Tulip is much better than Mongoloid.",16
-667,Butch,False,Motel Room,,"I didn't call you a Mongoloid, I called you a retard, but I took it back.",16
-668,Butch,False,Motel Room,,Merci beaucoup.,2
-669,Fabienne,False,Motel Room,,Butch?,1
-670,Butch,False,Motel Room,,"Yes, lemon pie.",3
-671,Fabienne,False,Motel Room,,Where are we going to go?,6
-672,Butch,False,Motel Room,,"I'm not sure yet. Wherever you want. We're gonna get a lot of money from this. But it ain't gonna be so much, we can live like hogs in the fat house forever. I was thinking we could go somewhere in the South Pacific. The kinda money we'll have'll carry us a long way down there.",56
-673,Fabienne,False,Motel Room,,"So if we wanted, we could live in Bora Bora?",10
-674,Butch,False,Motel Room,,"You betcha. And if after awhile you don't dig Bora Bora, then we can move over to Tahiti or Mexico.",20
-675,Fabienne,False,Motel Room,,But I do not speak Spanish.,6
-676,Butch,False,Motel Room,,"You don't speak Bora Boran either. Besides, Mexican is easy: Donde esta el zapataria?",14
-677,Fabienne,False,Motel Room,,What does that mean?,4
-678,Butch,False,Motel Room,,Where's the shoe store?,4
-679,Fabienne,False,Motel Room,,Donde esta el zapataria?,4
-680,Butch,False,Motel Room,,Excellent pronunciation. You'll be my little mama ceta in no time.,11
-681,Butch,True,Motel Room,,Que hora es?,3
-682,Fabienne,False,Motel Room,,Que hora es?,3
-683,Butch,True,Motel Room,,What time is it?,4
-684,Fabienne,False,Motel Room,,What time is it?,4
-685,Butch,True,Motel Room,,"Time for bed. Sweet dream, jellybean.",6
-686,Fabienne,False,Motel Room,,Butch.,1
-687,Fabienne,False,Motel Room,,Forget it.,2
+659,Butch,False,Motel Room,night,I think I cracked a rib.,6
+660,Fabienne,False,Motel Room,night,Giving me oral pleasure?,4
+661,Butch,False,Motel Room,night,"No retard, from the fight.",5
+662,Fabienne,False,Motel Room,night,Don't call me retard.,4
+663,Butch,False,Motel Room,night,My name is Fabby! My name is Fabby!,8
+664,Fabienne,False,Motel Room,night,Shut up fuck head! I hate that Mongoloid voice.,9
+665,Butch,False,Motel Room,night,"Okay, sorry, sorry, sorry, I take it back! Can I have a towel please, Miss Beautiful Tulip.",17
+666,Fabienne,False,Motel Room,night,"Oh I like that, I like being called a tulip. Tulip is much better than Mongoloid.",16
+667,Butch,False,Motel Room,night,"I didn't call you a Mongoloid, I called you a retard, but I took it back.",16
+668,Butch,False,Motel Room,night,Merci beaucoup.,2
+669,Fabienne,False,Motel Room,night,Butch?,1
+670,Butch,False,Motel Room,night,"Yes, lemon pie.",3
+671,Fabienne,False,Motel Room,night,Where are we going to go?,6
+672,Butch,False,Motel Room,night,"I'm not sure yet. Wherever you want. We're gonna get a lot of money from this. But it ain't gonna be so much, we can live like hogs in the fat house forever. I was thinking we could go somewhere in the South Pacific. The kinda money we'll have'll carry us a long way down there.",56
+673,Fabienne,False,Motel Room,night,"So if we wanted, we could live in Bora Bora?",10
+674,Butch,False,Motel Room,night,"You betcha. And if after awhile you don't dig Bora Bora, then we can move over to Tahiti or Mexico.",20
+675,Fabienne,False,Motel Room,night,But I do not speak Spanish.,6
+676,Butch,False,Motel Room,night,"You don't speak Bora Boran either. Besides, Mexican is easy: Donde esta el zapataria?",14
+677,Fabienne,False,Motel Room,night,What does that mean?,4
+678,Butch,False,Motel Room,night,Where's the shoe store?,4
+679,Fabienne,False,Motel Room,night,Donde esta el zapataria?,4
+680,Butch,False,Motel Room,night,Excellent pronunciation. You'll be my little mama ceta in no time.,11
+681,Butch,True,Motel Room,night,Que hora es?,3
+682,Fabienne,False,Motel Room,night,Que hora es?,3
+683,Butch,True,Motel Room,night,What time is it?,4
+684,Fabienne,False,Motel Room,night,What time is it?,4
+685,Butch,True,Motel Room,night,"Time for bed. Sweet dream, jellybean.",6
+686,Fabienne,False,Motel Room,night,Butch.,1
+687,Fabienne,False,Motel Room,night,Forget it.,2
 688,Fabienne,False,Motel Room,morning,Merde! You startled me. Did you have a bad dream?,10
 689,Butch,False,Motel Room,morning,What are you watching?,4
 690,Fabienne,False,Motel Room,morning,"A motorcycle movie, I'm not sure the name.",8
