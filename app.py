@@ -13,12 +13,26 @@ from characters import characters
 
 import random
 
+import numpy as np
+
 df = pd.read_csv("pulp_fiction_dialogue.csv")
 
 def characters_checkboxes():
 	result = []
-	for character in characters:
-		result.append({'label': character.title(), 'value': character.title()})
+	for character in df.Character.unique():
+		result.append({'label': character, 'value': character})
+	return result
+
+def places_checkboxes():
+	result = []
+	for place in df.Place.unique():
+		result.append({'label': place, 'value': place})
+	return result
+
+def times_checkboxes():
+	result = []
+	for time in df.Time.unique():
+		result.append({'label': time, 'value': time})
 	return result
 
 def random_line(df):
@@ -40,9 +54,11 @@ def word_count(df):
 	#return px.bar(words, x=words.index, y=words["Word count"])
 	return px.bar(df, x="Character", y="Word count", color="Word count", hover_data=df.columns)
 
-def filtered_dataframe(f_characters):
+def filtered_dataframe(f_characters, f_places, f_times):
 	filtered = df.copy()
 	filtered = filtered[filtered.Character.isin(f_characters)]
+	filtered = filtered[filtered.Place.isin(f_places)]
+	filtered = filtered[filtered.Time.isin(f_times)]
 	return filtered
 
 
@@ -56,6 +72,60 @@ app.layout = html.Div([
 	html.Div(children='''
         Exploratory interactive visualization to the dialogue of Pulp Fiction
     '''),
+
+	html.Div([
+		html.H4('Characters'),
+		html.Div(
+		dcc.Checklist(
+			id='filter-characters',
+    		options=characters_checkboxes(),
+			value=df.Character.unique()
+		),
+		style={"overflow": "auto",
+			   "height":"200px",
+			   "width": "200px"}
+		),
+		html.Button('All', id='btn-all-characters', title="Select all characters"),
+		html.Button('Clear', id='btn-clear-characters', title="Unselect all characters")
+		],
+		style={"display": "inline-block", "margin": "1em"}
+	),
+
+	html.Div([
+		html.H4('Locations'),
+		html.Div(
+			dcc.Checklist(
+				id='filter-places',
+				options=places_checkboxes(),
+				value=df.Place.unique()
+			),
+			style={"overflow": "auto",
+				"height":"200px",
+				"width": "200px"}
+		),
+		html.Button('All', id='btn-all-places', title="Select all locations"),
+		html.Button('Clear', id='btn-clear-places', title="Unselect all locations"),
+		],
+		style={"display": "inline-block", "margin": "1em"}
+	),
+
+	html.Div([
+		html.H4('Time of day'),
+		html.Div(
+			dcc.Checklist(
+				id='filter-times',
+				options=times_checkboxes(),
+				value=df.Time.unique()
+			),
+			style={"overflow": "auto",
+				"height":"200px",
+				"width": "200px"}
+		),
+		html.Button('All', id='btn-all-times', title="Select all times of day"),
+		html.Button('Clear', id='btn-clear-times', title="Unselect all times of day"),
+		],
+		style={"display": "inline-block", "margin": "1em"}
+	),
 
 	html.Div(
 		children=random_line(df),
@@ -73,23 +143,56 @@ app.layout = html.Div([
 		id='word-cloud',
 		figure=word_cloud(df)
 	),
-
-	dcc.Checklist(
-		id='filter_characters',
-    	options=characters_checkboxes(),
-		value=df.Character.values
-	)
 ])
+
+@app.callback(
+	Output(component_id='filter-characters', component_property='value'),
+	[Input(component_id='btn-clear-characters', component_property='n_clicks'),
+	 Input(component_id='btn-all-characters', component_property='n_clicks')]
+)
+def select_or_clear_all_characters(all_btn, clear_btn):
+	changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
+	if 'btn-all-characters' in changed_id:
+		return df.Character.unique()
+	elif 'btn-clear-characters' in changed_id:
+		return []
+
+@app.callback(
+	Output(component_id='filter-places', component_property='value'),
+	[Input(component_id='btn-clear-places', component_property='n_clicks'),
+	 Input(component_id='btn-all-places', component_property='n_clicks')]
+)
+def select_or_clear_all_places(all_btn, clear_btn):
+	changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
+	if 'btn-all-places' in changed_id:
+		return df.Place.unique()
+	elif 'btn-clear-places' in changed_id:
+		return []
+
+@app.callback(
+	Output(component_id='filter-times', component_property='value'),
+	[Input(component_id='btn-clear-times', component_property='n_clicks'),
+	 Input(component_id='btn-all-times', component_property='n_clicks')]
+)
+def select_or_clear_all_times(all_btn, clear_btn):
+	changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
+	if 'btn-all-times' in changed_id:
+		return df.Time.unique()
+	elif 'btn-clear-times' in changed_id:
+		return []
 
 @app.callback(
 	[Output(component_id='word-count', component_property='figure'),
 	 Output(component_id='random-line', component_property='children'),
 	 Output(component_id='word-cloud', component_property='figure')],
-	[Input(component_id='filter_characters', component_property='value')]
+	[Input(component_id='filter-characters', component_property='value'),
+	 Input(component_id='filter-places', component_property='value'),
+	 Input(component_id='filter-times', component_property='value')]
 )
-def filter_graphs(f_characters):
-	f = filtered_dataframe(f_characters)
+def filter_graphs(f_characters, f_places, f_times):
+	f = filtered_dataframe(f_characters, f_places, f_times)
 	return word_count(f), random_line(f), word_cloud(f)
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)
