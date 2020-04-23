@@ -2,3 +2,7 @@
 __pycache__/
 ideas.md
 
+venv
+*.pyc
+.DS_Store
+.env

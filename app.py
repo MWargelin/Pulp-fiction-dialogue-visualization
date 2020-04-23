@@ -1,3 +1,5 @@
+import os
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -14,6 +16,7 @@ from characters import characters
 import random
 
 import numpy as np
+from dash.exceptions import PreventUpdate
 
 df = pd.read_csv("pulp_fiction_dialogue.csv")
 
@@ -36,6 +39,8 @@ def times_checkboxes():
 	return result
 
 def random_line(df):
+	if len(df) == 0:
+		return "You have filtered out all data!"
 	line = df.iloc[random.randrange(len(df))]
 	return f"Line {line.iloc[0]}, {line.Character}: \"{line.Line}\""
 
@@ -43,6 +48,8 @@ def word_cloud(df):
 	words = ""
 	for line in df["Line"]:
 		words = " ".join([words, line])
+	if len(df) == 0:
+		words = "Empty"
 	wordcloud = WordCloud(background_color='white').generate(words)
 	fig = px.imshow(wordcloud.to_image())
 	fig.update_xaxes(showticklabels=False)
@@ -65,12 +72,13 @@ def filtered_dataframe(f_characters, f_places, f_times):
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
 
 app.layout = html.Div([
     html.H1('Pulp Fiction'),
 
 	html.Div(children='''
-        Exploratory interactive visualization to the dialogue of Pulp Fiction
+        Exploratory interactive visualization of the dialogue of the movie Pulp Fiction
     '''),
 
 	html.Div([
@@ -141,8 +149,9 @@ app.layout = html.Div([
 
 	dcc.Graph(
 		id='word-cloud',
-		figure=word_cloud(df)
-	),
+		figure=word_cloud(df),
+		config={'displayModeBar': False}
+	)
 ])
 
 @app.callback(
@@ -150,7 +159,9 @@ app.layout = html.Div([
 	[Input(component_id='btn-clear-characters', component_property='n_clicks'),
 	 Input(component_id='btn-all-characters', component_property='n_clicks')]
 )
-def select_or_clear_all_characters(all_btn, clear_btn):
+def select_or_clear_all_characters(clear_btn, all_btn):
+	if clear_btn is None and all_btn is None:
+		raise PreventUpdate
 	changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
 	if 'btn-all-characters' in changed_id:
 		return df.Character.unique()
@@ -162,7 +173,9 @@ def select_or_clear_all_characters(all_btn, clear_btn):
 	[Input(component_id='btn-clear-places', component_property='n_clicks'),
 	 Input(component_id='btn-all-places', component_property='n_clicks')]
 )
-def select_or_clear_all_places(all_btn, clear_btn):
+def select_or_clear_all_places(clear_btn, all_btn):
+	if clear_btn is None and all_btn is None:
+		raise PreventUpdate
 	changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
 	if 'btn-all-places' in changed_id:
 		return df.Place.unique()
@@ -174,7 +187,9 @@ def select_or_clear_all_places(all_btn, clear_btn):
 	[Input(component_id='btn-clear-times', component_property='n_clicks'),
 	 Input(component_id='btn-all-times', component_property='n_clicks')]
 )
-def select_or_clear_all_times(all_btn, clear_btn):
+def select_or_clear_all_times(clear_btn, all_btn):
+	if clear_btn is None and all_btn is None:
+		raise PreventUpdate
 	changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
 	if 'btn-all-times' in changed_id:
 		return df.Time.unique()
@@ -190,9 +205,10 @@ def select_or_clear_all_times(all_btn, clear_btn):
 	 Input(component_id='filter-times', component_property='value')]
 )
 def filter_graphs(f_characters, f_places, f_times):
+	if f_characters is None or f_places is None or f_times is None:
+		f_characters = f_places = f_times = []
 	f = filtered_dataframe(f_characters, f_places, f_times)
 	return word_count(f), random_line(f), word_cloud(f)
-
 
 if __name__ == '__main__':
     app.run_server(debug=True)
