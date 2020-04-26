@@ -50,16 +50,18 @@ def word_cloud(df):
 		words = " ".join([words, line])
 	if len(df) == 0:
 		words = "Empty"
-	wordcloud = WordCloud(background_color='white').generate(words)
-	fig = px.imshow(wordcloud.to_image())
+	wordcloud = WordCloud(background_color='white', width=800, height=280).generate(words)
+	img = wordcloud.to_image()
+	fig = px.imshow(img, width=img.width, height=img.height)
 	fig.update_xaxes(showticklabels=False)
 	fig.update_yaxes(showticklabels=False)
+	fig.update_layout({"hovermode":False, "margin":{"l":0, "r":0, "t":0, "b":0, }})
 	return fig
 
 def word_count(df):
 	words = df.groupby("Character").sum().sort_values("Word count", ascending = False)
 	#return px.bar(words, x=words.index, y=words["Word count"])
-	return px.bar(df, x="Character", y="Word count", color="Word count", hover_data=df.columns)
+	return px.bar(df, x="Character", y="Word count", color="Word count", hover_data=df.columns, color_continuous_scale=px.colors.sequential.Blugrn)
 
 def filtered_dataframe(f_characters, f_places, f_times):
 	filtered = df.copy()
@@ -136,6 +138,15 @@ app.layout = html.Div([
 	),
 
 	html.Div(
+		dcc.Graph(
+			id='word-cloud',
+			figure=word_cloud(df),
+			config={'staticPlot': True}
+		),
+		style={"display": "inline-block"}
+	),
+
+	html.Div(
 		children=random_line(df),
 		id='random-line',
 		style={
@@ -145,13 +156,7 @@ app.layout = html.Div([
     dcc.Graph(
         id='word-count',
         figure=word_count(df)
-    ),
-
-	dcc.Graph(
-		id='word-cloud',
-		figure=word_cloud(df),
-		config={'displayModeBar': False}
-	)
+    )
 ])
 
 @app.callback(
