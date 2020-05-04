@@ -59,9 +59,15 @@ def word_cloud(df):
 	return fig
 
 def word_count(df):
-	words = df.groupby("Character").sum().sort_values("Word count", ascending = False)
-	#return px.bar(words, x=words.index, y=words["Word count"])
-	return px.bar(df, x="Character", y="Word count", color="Word count", hover_data=df.columns, color_continuous_scale=px.colors.sequential.Blugrn)
+	fig = px.bar(df,
+			x="Character",
+			y="Word count",
+			color="Word count",
+			hover_data=['Line number', 'Place', 'Time', 'Line'],
+			color_continuous_scale=px.colors.sequential.Blugrn
+		)
+	fig.update_layout({'plot_bgcolor': '#f4f4f4'})
+	return fig
 
 def filtered_dataframe(f_characters, f_places, f_times):
 	filtered = df.copy()
