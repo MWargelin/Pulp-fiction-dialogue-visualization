@@ -219,8 +219,6 @@ def display_click_data(clickData):
 	if clickData is None:
 		return "Click a line in the bar chart to see more detailed information here!"
 
-	#line_info = clickData['points'][0]['customdata']
-	print(clickData)
 	line_number = clickData['points'][0]['customdata'][0]
 	line_info = df.iloc[line_number-1]
 	d = {'Line number': line_info[0],
