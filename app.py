@@ -151,12 +151,17 @@ app.layout = html.Div([
 		id='random-line',
 		style={
 			'text-align': 'right'
-		}),
+		}
+	),
 
-    dcc.Graph(
-        id='word-count',
-        figure=word_count(df)
-    )
+	dcc.Graph(
+			id='word-count',
+			figure=word_count(df)
+	),
+
+	html.Div(
+		id='clicked-line'
+	),
 ])
 
 @app.callback(
@@ -200,6 +205,32 @@ def select_or_clear_all_times(clear_btn, all_btn):
 		return df.Time.unique()
 	elif 'btn-clear-times' in changed_id:
 		return []
+
+@app.callback(
+    Output('clicked-line', 'children'),
+    [Input('word-count', 'clickData')])
+def display_click_data(clickData):
+	if clickData is None:
+		return "Click a line in the bar chart to see more detailed information here!"
+
+	#line_info = clickData['points'][0]['customdata']
+	print(clickData)
+	line_number = clickData['points'][0]['customdata'][0]
+	line_info = df.iloc[line_number-1]
+	d = {'Line number': line_info[0],
+  		'Character': line_info[1],
+  		'Off screen': line_info[2],
+  		'Place': line_info[3],
+  		'Time': line_info[4],
+		'Word count': line_info[6],
+  		'Line': line_info[5]}
+
+	result=[]
+	for k, v in d.items():
+		s = ": ".join((str(k),str(v)))
+		result.append(html.P(s))
+
+	return result
 
 @app.callback(
 	[Output(component_id='word-count', component_property='figure'),
