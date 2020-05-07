@@ -86,7 +86,7 @@ app.layout = html.Div([
     html.H1('Pulp Fiction'),
 
 	html.Div(children='''
-        Exploratory interactive visualization of the dialogue of the movie Pulp Fiction
+        Exploratory interactive visualization of the dialogue in the movie Pulp Fiction
     '''),
 
 	html.Div([
