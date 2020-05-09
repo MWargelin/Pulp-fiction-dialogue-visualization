@@ -80,6 +80,7 @@ def script_data():
     time = None
     speaking_turn = ""
     off_screen = False
+    voice_over = False
 
     with open(script_path) as script:
         for line in script:
@@ -98,6 +99,12 @@ def script_data():
                 if " (O.S.)" in line:
                     off_screen = True
                     line = line.replace(" (O.S.)", "")
+
+                # (V.O.) means voice over.
+                # remove marking to not interpret it as new character
+                if " (V.O.)" in line:
+                    voice_over = True
+                    line = line.replace(" (V.O.)", "")
                 
                 if line in characters:
                     character = line
@@ -111,11 +118,12 @@ def script_data():
                 if character is not None:
                     speaking_turn = remove_parenthesis(speaking_turn)
                     word_count = count_words(speaking_turn)
-                    data_rows.append({"Character": character, "Off screen": off_screen, "Place": place, "Time": time, "Line": speaking_turn, "Word count": word_count})
+                    data_rows.append({"Character": character, "Off screen": off_screen, "Voice-over": voice_over, "Place": place, "Time": time, "Line": speaking_turn, "Word count": word_count})
                 
                 character = None
                 speaking_turn = ""
                 off_screen = False
+                voice_over = False
                 continue
 
             # If we got this far, a speaking turn is not over.
