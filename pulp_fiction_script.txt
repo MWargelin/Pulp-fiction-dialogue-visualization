@@ -2554,7 +2554,7 @@ Her head JERKS back. Her hands go to her nose (which feels
 like it's on fucking fire), something is terribly wrong.
 Then... the rush hits...
 
-BATHROOM
+INT. BATHROOM (MARSELLUS WALLACE'S HOUSE) – NIGHT
 
 Vincent dries his hands on a towel while he continues his
 dialogue with the mirror.
@@ -2573,7 +2573,7 @@ it's like she's trying to crawl with the bones removed from
 her knees. Blood begins to drip from Mia's nose. Then her
 stomach gets into the act and she VOMITS.
 
-BATHROOM
+INT. BATHROOM (MARSELLUS WALLACE'S HOUSE) – NIGHT
 
 Vince continues.
 
@@ -2588,7 +2588,7 @@ Now that he's given himself a little pep talk, Vincent's
 ready for whatever's waiting for him on the other side of
 that door. So he goes through it.
 
-LIVING ROOM
+INT. MARSELLUS' HOUSE / LIVING ROOM
 
 We follow behind Vincent as he walks from the bathroom to
 the living room, where he finds Mia lying on the floor like
@@ -2832,6 +2832,8 @@ on it.
 
 We follow HANDHELD behind her as she opens the door, walking
 through the hall into the living room.
+
+LIVING ROOM
 
 JODY
 It's only one-thirty in the goddamn
@@ -4108,7 +4110,7 @@ FADE TO BLACK
 
 FADE UP:
 
-MOTEL ROOM
+INT. MOTEL (ROOM SIX) – NIGHT
 
 Same motel room, except empty. WE HEAR THE SHOWER RUNNING in
 the bathroom. The CAMERA MOVES to the bathroom doorway. We
@@ -4255,7 +4257,7 @@ FADE TO BLACK
 
 FADE UP:
 
-MOTEL ROOM – MORNING
+INT. MOTEL (ROOM SIX) – MORNING
 
 SAME SHOT AS BEFORE, the next morning. We find Butch still
 asleep in bed.
@@ -5559,6 +5561,8 @@ TITLE DISAPPEARS.
 
 Over black, we can HEAR in the distance, men talking.
 
+INT. BATHROOM – MORNING
+
 JULES (O.S.)
 You ever read the Bible, Brett?
 
@@ -5575,7 +5579,7 @@ the tyranny of evil men..."
 
 FADE UP:
 
-INT. BATHROOM – DAY
+INT. BATHROOM – MORNING
 
 We're in the bathroom of the Hollywood apartment we were in
 earlier. In fact, we're there at exactly the same time. Except
@@ -5614,7 +5618,7 @@ Waiting for them isn't the smartest move. Bursting out the
 door and blowing them all away while they're fuckin' around
 is the way to go.
 
-INT. APARTMENT – DAY
+INT. APARTMENT – MORNING
 
 The bathroom door BURSTS OPEN and the Fourth Man CHARGES
 out, silver Magnum raised, FIRING SIX BOOMING SHOTS from his
@@ -5898,7 +5902,7 @@ we gotta get off the road, pronto! I
 need to use your garage for a couple
 hours.
 
-INT. JIMMIE'S BATHROOM – DAY
+INT. JIMMIE'S BATHROOM – MORNING
 
 Jules is bent over a sink, washing his bloody hands while
 Vincent stands behind him.
