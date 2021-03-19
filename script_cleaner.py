@@ -6,14 +6,20 @@ from characters import characters
 script_path = "pulp_fiction_script.txt"
 
 def string_conversions(data):
-    data.Character = data.Character.str.title()
+    data["Character (in script)"] = data["Character (in script)"].str.title()
 
     # Manually change cases that don't work with str.title()
-    data.Character = data.Character.str.replace("Woman\'S Voice", "Woman\'s voice")
-    data.Character = data.Character.str.replace("Young Man", "Young man")
-    data.Character = data.Character.str.replace("Young Woman", "Young woman")
-    data.Character = data.Character.str.replace("Fourth Man", "Fourth man")
-    data.Character = data.Character.str.replace("Looky-Loo Woman", "Looky-loo woman")
+    data["Character (in script)"] = data["Character (in script)"].str.replace("Woman\'S Voice", "Woman\'s voice")
+    data["Character (in script)"] = data["Character (in script)"].str.replace("Young Man", "Young man")
+    data["Character (in script)"] = data["Character (in script)"].str.replace("Young Woman", "Young woman")
+    data["Character (in script)"] = data["Character (in script)"].str.replace("Fourth Man", "Fourth man")
+    data["Character (in script)"] = data["Character (in script)"].str.replace("Looky-Loo Woman", "Looky-loo woman")
+
+    data["Character (actual)"] = data["Character (actual)"].str.title()
+
+    # Manually change cases that don't work with str.title()
+    data["Character (actual)"] = data["Character (actual)"].str.replace("Fourth Man", "Fourth man")
+    data["Character (actual)"] = data["Character (actual)"].str.replace("Looky-Loo Woman", "Looky-loo woman")
 
     data.Place = data.Place.str.lower()
 
@@ -42,8 +48,8 @@ def string_conversions(data):
 def special_cases(data):
     # There's a scene where picture cuts back and forth, and the location isn't specified in the script so it goes unnoticed by the algorithm.
     # Manually change the locations to the right locations
-    data.loc[(data['Place'] == "VINCENT IN THE MALIBU") & (data['Character'] == "VINCENT"), ['Place', 'Time']] = ["INT. VINCENT'S MALIBU (MOVING)", "NIGHT"]
-    data.loc[(data['Place'] == "VINCENT IN THE MALIBU") & ((data['Character'] == "LANCE") | (data['Character'] == "JODY")), ['Place', 'Time']] = ["INT. LANCE'S HOUSE", "NIGHT"]
+    data.loc[(data['Place'] == "VINCENT IN THE MALIBU") & (data['Character (in script)'] == "VINCENT"), ['Place', 'Time']] = ["INT. VINCENT'S MALIBU (MOVING)", "NIGHT"]
+    data.loc[(data['Place'] == "VINCENT IN THE MALIBU") & ((data['Character (in script)'] == "LANCE") | (data['Character (in script)'] == "JODY")), ['Place', 'Time']] = ["INT. LANCE'S HOUSE", "NIGHT"]
 
 
 def remove_parenthesis(speaking_turn):
@@ -71,6 +77,17 @@ def count_words(speaking_turn):
             count = count - 1
 
     return count
+
+def actual_character(character):
+    if character == "YOUNG WOMAN" or character == "YOLANDA":
+        return "HONEY BUNNY"
+    if character == "YOUNG MAN" or character == "PATRON":
+        return "PUMPKIN"
+    if character == "WINSTON":
+        return "THE WOLF"
+    if character == "WOMAN'S VOICE":
+        return "MOTHER"
+    return character
 
 
 def script_data():
@@ -118,7 +135,7 @@ def script_data():
                 if character is not None:
                     speaking_turn = remove_parenthesis(speaking_turn)
                     word_count = count_words(speaking_turn)
-                    data_rows.append({"Character": character, "Off screen": off_screen, "Voice-over": voice_over, "Place": place, "Time": time, "Line": speaking_turn, "Word count": word_count})
+                    data_rows.append({"Character (in script)": character, "Character (actual)": actual_character(character), "Off screen": off_screen, "Voice-over": voice_over, "Place": place, "Time": time, "Line": speaking_turn, "Word count": word_count})
                 
                 character = None
                 speaking_turn = ""
